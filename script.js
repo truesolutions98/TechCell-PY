@@ -1,116 +1,95 @@
 /**
- * TechCell PY — script.js
- * ─────────────────────────────────────────────────────────────
- * Módulo principal: Cuotero automático + actualización de links WhatsApp
- *
- * HOW TO ADD A NEW PRODUCT:
- *   1. Copiá una tarjeta <article class="card"> en index.html
- *   2. Cambiá data-precio por el precio en guaraníes
- *   3. Actualizá los IDs: precio-total-N, num-cuotas-N, monto-cuota-N, wa-N
- *   4. Cambiá data-producto="N" en los tres botones de cuotas
- *   5. El cuotero funciona automáticamente sin tocar este archivo
- * ─────────────────────────────────────────────────────────────
+ * TechCell PY — script.js v2
+ * ─────────────────────────────────────────────────
+ * Módulos:
+ *   1. Cuotero automático (6 / 12 / 18 / 24 cuotas)
+ *   2. Actualización dinámica de links de WhatsApp
+ *   3. Acordeón de Preguntas Frecuentes (FAQ)
+ *   4. Animación de entrada al hacer scroll (cards)
+ * ─────────────────────────────────────────────────
  */
 
 'use strict';
+
+/* ============================================================
+   NÚMEROS DE WHATSAPP
+   ============================================================ */
+var WA_MATHEO = '595992102202';
+var WA_JESUS  = '595987101181';
 
 /* ============================================================
    UTILIDADES
    ============================================================ */
 
 /**
- * Formatea un número en formato paraguayo de guaraníes.
- * Ejemplo: 1990000 → "₲ 1.990.000"
- * @param {number} monto
- * @returns {string}
+ * Formatea guaraníes en formato paraguayo.
+ * Ejemplo: 885000 → "885.000 Gs"
  */
-function formatearGuaranies(monto) {
-  const entero = Math.ceil(monto); // redondeo al guaraní superior
-  return '₲ ' + entero.toLocaleString('es-PY');
+function formatGs(monto) {
+  var entero = Math.round(monto);
+  return entero.toLocaleString('es-PY') + ' Gs';
 }
 
 /**
- * Calcula la cuota mensual sin interés.
- * Fórmula: cuota = precio / cantidad_cuotas
- * @param {number} precio       — precio total del producto
- * @param {number} cantCuotas   — cantidad de cuotas elegidas
- * @returns {number}
+ * Calcula cuota mensual.
+ * Fórmula: cuota = precio / cuotas  (sin interés)
  */
-function calcularCuota(precio, cantCuotas) {
-  return precio / cantCuotas;
+function calcCuota(precio, cuotas) {
+  return precio / cuotas;
 }
 
 /**
- * Construye el mensaje de WhatsApp con los detalles del producto y cuotas.
- * @param {string} nombreProducto
- * @param {number} cantCuotas
- * @param {string} montoCuota — ya formateado
- * @returns {string} URL encoded
+ * Construye mensaje de WhatsApp URL-encoded.
  */
-function mensajeWhatsApp(nombreProducto, cantCuotas, montoCuota) {
-  const texto = `Hola! Me interesa el ${nombreProducto} en ${cantCuotas} cuotas de ${montoCuota}.`;
-  return encodeURIComponent(texto);
+function buildMsg(asesor, modelo, cuotas, montoCuota) {
+  var txt = 'Hola ' + asesor + '! Me interesa el ' + modelo +
+            ' en ' + cuotas + ' cuotas de ' + montoCuota + '.';
+  return encodeURIComponent(txt);
 }
 
 /* ============================================================
-   NÚMERO DE WHATSAPP
-   — Cambiá este número por el de tu tienda
-   — Formato: código de país sin "+" seguido del número
-   ============================================================ */
-const WA_NUMERO = '595981000000';
-
-/* ============================================================
-   INICIALIZAR CUOTERO
-   Se ejecuta al cargar la página y configura los botones de
-   cuotas de todos los productos presentes en el HTML.
+   CUOTERO AUTOMÁTICO
    ============================================================ */
 function inicializarCuotero() {
-  // Busca todos los botones de cuota en la página
-  const botonesGrupo = document.querySelectorAll('.cuotero__btns');
 
-  botonesGrupo.forEach(function(grupo) {
-    const botones = grupo.querySelectorAll('.cuota-btn');
+  document.querySelectorAll('.cuotero').forEach(function(cuotero) {
+    var precio   = parseFloat(cuotero.dataset.precio);
+    var id       = cuotero.dataset.id;
+    var botones  = cuotero.querySelectorAll('.cuota-btn');
+    var elMonto  = document.getElementById('monto-' + id);
+    var waBtn1   = document.getElementById('wa1-' + id);
+    var waBtn2   = document.getElementById('wa2-' + id);
+    var card     = cuotero.closest('.card');
+    var modelo   = card ? card.querySelector('.card__name').textContent.trim() : 'el equipo';
 
     botones.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        // ── Obtener datos del botón pulsado ──
-        const idProducto  = btn.dataset.producto;
-        const cantCuotas  = parseInt(btn.dataset.cuotas, 10);
 
-        // ── Obtener precio del producto desde la tarjeta padre ──
-        const tarjeta = btn.closest('.card');
-        const precio  = parseFloat(tarjeta.dataset.precio);
+        var cuotas    = parseInt(btn.dataset.cuotas, 10);
+        var montoCuota = calcCuota(precio, cuotas);
+        var montoFmt   = formatGs(montoCuota);
 
-        // ── Calcular cuota ──
-        const cuotaMonto = calcularCuota(precio, cantCuotas);
-        const montoFormateado = formatearGuaranies(cuotaMonto);
+        /* Actualizar monto en pantalla */
+        if (elMonto) {
+          elMonto.textContent = montoFmt;
+          /* micro-animación flash */
+          elMonto.classList.remove('monto-flash');
+          void elMonto.offsetWidth;
+          elMonto.classList.add('monto-flash');
+        }
 
-        // ── Actualizar UI: resultado del cuotero ──
-        const elNumCuotas = document.getElementById('num-cuotas-' + idProducto);
-        const elMonto     = document.getElementById('monto-cuota-' + idProducto);
-
-        if (elNumCuotas) elNumCuotas.textContent = cantCuotas;
-        if (elMonto)     elMonto.textContent     = montoFormateado;
-
-        // ── Actualizar estado "activo" de los botones del mismo grupo ──
+        /* Marcar botón activo */
         botones.forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
 
-        // ── Actualizar link de WhatsApp con cuotas actualizadas ──
-        const linkWA      = document.getElementById('wa-' + idProducto);
-        const nombreModel = tarjeta.querySelector('.card__name').textContent.trim();
-
-        if (linkWA) {
-          const msg = mensajeWhatsApp(nombreModel, cantCuotas, montoFormateado);
-          linkWA.href = `https://wa.me/${WA_NUMERO}?text=${msg}`;
+        /* Actualizar links de WhatsApp con cuotas y monto actualizados */
+        if (waBtn1) {
+          waBtn1.href = 'https://wa.me/' + WA_MATHEO + '?text=' +
+                        buildMsg('Matheo', modelo, cuotas, montoFmt);
         }
-
-        // ── Micro-animación en el monto actualizado ──
-        if (elMonto) {
-          elMonto.classList.remove('monto-flash');
-          // forzar re-flow para reiniciar la animación
-          void elMonto.offsetWidth;
-          elMonto.classList.add('monto-flash');
+        if (waBtn2) {
+          waBtn2.href = 'https://wa.me/' + WA_JESUS + '?text=' +
+                        buildMsg('Jesus', modelo, cuotas, montoFmt);
         }
       });
     });
@@ -118,54 +97,53 @@ function inicializarCuotero() {
 }
 
 /* ============================================================
-   ANIMACIÓN CSS DINÁMICA para "monto-flash"
-   Se inyecta una regla de keyframe para la transición del monto
+   ANIMACIÓN CSS FLASH para el monto al cambiar cuotas
    ============================================================ */
-function inyectarAnimacionFlash() {
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes flash-monto {
-      0%   { transform: scale(1.15); color: #fff; }
-      100% { transform: scale(1);    color: var(--naranja-2); }
-    }
-    .monto-flash {
-      animation: flash-monto .3s ease forwards;
-    }
-  `;
-  document.head.appendChild(style);
+function inyectarFlash() {
+  var s = document.createElement('style');
+  s.textContent = '@keyframes flash-monto{0%{transform:scale(1.18);color:#fff}100%{transform:scale(1);color:var(--naranja-2)}}.monto-flash{animation:flash-monto .3s ease forwards}';
+  document.head.appendChild(s);
 }
 
 /* ============================================================
-   SMOOTH SCROLL — flecha del hero
+   ACORDEÓN FAQ
    ============================================================ */
-function configurarSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(function(enlace) {
-    enlace.addEventListener('click', function(e) {
-      const destino = document.querySelector(enlace.getAttribute('href'));
-      if (destino) {
-        e.preventDefault();
-        destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function inicializarFAQ() {
+  document.querySelectorAll('.faq-pregunta').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var estaAbierto = btn.getAttribute('aria-expanded') === 'true';
+      var respuesta   = btn.nextElementSibling;
+
+      /* Cerrar todos los demás */
+      document.querySelectorAll('.faq-pregunta').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        var r = b.nextElementSibling;
+        if (r) r.classList.remove('abierta');
+      });
+
+      /* Abrir/cerrar el clickeado */
+      if (!estaAbierto) {
+        btn.setAttribute('aria-expanded', 'true');
+        if (respuesta) respuesta.classList.add('abierta');
       }
     });
   });
 }
 
 /* ============================================================
-   INTERSECTION OBSERVER — animar tarjetas al hacer scroll
-   (refuerzo para navegadores que no soporten animation-delay
-   combinado con opacity:0 inicial)
+   ANIMACIÓN SCROLL — cards entran al hacer scroll
    ============================================================ */
-function configurarAnimacionScroll() {
+function animarCardsScroll() {
   if (!('IntersectionObserver' in window)) return;
 
-  const observer = new IntersectionObserver(function(entries) {
+  var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         entry.target.style.animationPlayState = 'running';
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
+  }, { threshold: 0.06 });
 
   document.querySelectorAll('.card').forEach(function(card) {
     card.style.animationPlayState = 'paused';
@@ -174,13 +152,25 @@ function configurarAnimacionScroll() {
 }
 
 /* ============================================================
-   PUNTO DE ENTRADA
+   SMOOTH SCROLL para links internos
+   ============================================================ */
+function smoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var dest = document.querySelector(a.getAttribute('href'));
+      if (dest) { e.preventDefault(); dest.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+}
+
+/* ============================================================
+   INICIO
    ============================================================ */
 document.addEventListener('DOMContentLoaded', function() {
-  inyectarAnimacionFlash();
+  inyectarFlash();
   inicializarCuotero();
-  configurarSmoothScroll();
-  configurarAnimacionScroll();
-
-  console.log('✅ TechCell PY — Cuotero iniciado correctamente');
+  inicializarFAQ();
+  animarCardsScroll();
+  smoothScroll();
+  console.log('✅ TechCell PY v2 — listo');
 });
