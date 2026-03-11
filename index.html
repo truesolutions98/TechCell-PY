@@ -1,579 +1,647 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TechCell Paraguay — Comprá tu celular en cuotas. Samsung, Xiaomi y más." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- ══ PROTECCIÓN ANTI-INDEXACIÓN Y ANTI-CRAWLERS ══ -->
+  <!-- Motores de búsqueda orgánica -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <!-- Google específico -->
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot-news" content="noindex, nofollow">
+  <!-- Google Ads crawler -->
+  <meta name="googlebot-ads" content="noindex, nofollow">
+  <!-- Meta / Facebook crawler -->
+  <meta name="facebook-crawler" content="noindex">
+  <meta property="og:robots" content="noindex, nofollow">
+  <!-- Bots adicionales -->
+  <meta name="bingbot" content="noindex, nofollow">
+  <meta name="slurp" content="noindex">
+  <meta name="msnbot" content="noindex">
+  <!-- Deshabilitar vista previa en iMessage, WhatsApp, Telegram -->
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <!-- ══════════════════════════════════════════════ -->
+  <meta name="description" content="Tecnología en cuotas para docentes de la República del Paraguay."/>
   <title>TechCell PY — Celulares en Cuotas</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- ============================
-       ENCABEZADO / HERO
-  ============================= -->
-  <header class="header">
+  <!-- ══════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-icon">📱</span>
+        <span class="nav__logo-text">TechCell <em>PY</em></span>
+      </a>
+      <ul class="nav__menu">
+        <li><a href="#home"      class="nav__link active">Inicio</a></li>
+        <li><a href="#productos" class="nav__link">Productos</a></li>
+        <li><a href="#faq"       class="nav__link">FAQ</a></li>
+      </ul>
+      <a href="#contacto" class="btn btn--outline nav__cta">WhatsApp</a>
+      <button class="nav__burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       HOME — Minimalista, orientado a docentes
+  ══════════════════════════════════════════════ -->
+  <section id="home" class="hero-section">
     <div class="header__orb header__orb--1"></div>
     <div class="header__orb header__orb--2"></div>
-    <div class="container">
-      <nav class="nav">
-        <div class="nav__logo">
-          <span class="nav__logo-icon">📱</span>
-          <span class="nav__logo-text">TechCell <em>PY</em></span>
-        </div>
-        <div class="nav__links">
-          <a href="#productos" class="nav__link">Productos</a>
-          <a href="#faq" class="nav__link">FAQ</a>
-          <a href="#contacto" class="nav__link">Contacto</a>
-        </div>
-        <a href="#contacto" class="btn btn--outline nav__cta">Contactar</a>
-      </nav>
+    <div class="container hero__content">
 
-      <div class="hero">
-        <div class="hero__badge">🇵🇾 Envío a todo Paraguay</div>
-        <h1 class="hero__title">
-          Tu próximo celular,<br/>
-          <span class="hero__title--accent">en cuotas fáciles.</span>
-        </h1>
-        <p class="hero__sub">
-          Pagá hasta en <strong>24 cuotas</strong> sin complicaciones.
-          Calculá tu cuota al instante y consultá directo por WhatsApp.
-        </p>
-        <a href="#productos" class="btn btn--primary hero__btn">Ver productos ↓</a>
+      <div class="hero__badge">🇵🇾 Exclusivo para docentes — República del Paraguay</div>
+
+      <!-- Título principal -->
+      <h1 class="hero__title">
+        Tecnología de calidad,<br/>
+        <span class="hero__accent">al alcance del docente.</span>
+      </h1>
+
+      <!-- Descripción -->
+      <p class="hero__sub">
+        Celulares Samsung y Xiaomi originales con planes de cuotas
+        diseñados especialmente para los <strong>docentes de la República del Paraguay</strong>.
+      </p>
+
+      <!-- Subdescripción -->
+      <p class="hero__sub2">
+        Consultá nuestro catálogo, calculá tu cuota al instante
+        y realizá tu pedido directo por WhatsApp. Sin trámites complicados.
+      </p>
+
+      <!-- ── TRES BOTONES PRINCIPALES ── -->
+      <div class="hero__main-btns">
+
+        <!-- 1. Ver productos -->
+        <a href="#productos" class="hero-btn hero-btn--productos">
+          <span class="hero-btn__icon">📱</span>
+          <span class="hero-btn__text">
+            <strong>Ver Productos</strong>
+            <small>Explorá el catálogo</small>
+          </span>
+        </a>
+
+        <!-- 2. WhatsApp -->
+        <a href="#" data-wa="hero" data-msg="Hola! Soy docente y quiero consultar sobre celulares en cuotas." target="_blank" class="hero-btn hero-btn--whatsapp wa-secure">
+          <span class="hero-btn__icon">💬</span>
+          <span class="hero-btn__text">
+            <strong>WhatsApp</strong>
+            <small>Consultá ahora</small>
+          </span>
+        </a>
+
+        <!-- 3. AutoChatBot -->
+        <button class="hero-btn hero-btn--chatbot" id="btnAbrirChatbot" type="button">
+          <span class="hero-btn__icon">🤖</span>
+          <span class="hero-btn__text">
+            <strong>AutoChatBot</strong>
+            <small>Preguntas frecuentes</small>
+          </span>
+        </button>
+
       </div>
-    </div>
-  </header>
 
-  <!-- ============================
-       BENEFICIOS
-  ============================= -->
-  <section class="benefits">
-    <div class="container">
-      <ul class="benefits__list">
-        <li class="benefits__item"><span class="benefits__icon">⚡</span><span>Entrega rápida</span></li>
-        <li class="benefits__item"><span class="benefits__icon">🔒</span><span>Compra 100% segura</span></li>
-        <li class="benefits__item"><span class="benefits__icon">🏦</span><span>Hasta 24 cuotas</span></li>
-        <li class="benefits__item"><span class="benefits__icon">💬</span><span>Atención por WhatsApp</span></li>
+      <!-- Beneficios para docentes -->
+      <ul class="hero__chips">
+        <li class="chip">🎓 Para docentes del Paraguay</li>
+        <li class="chip">🏦 Hasta 24 cuotas</li>
+        <li class="chip">🔒 Compra 100% segura</li>
+        <li class="chip">📦 Envío a domicilio u oficina</li>
+        <li class="chip">⚡ Lunes a viernes 08:00–18:00 hs</li>
       </ul>
+
     </div>
   </section>
 
-  <!-- ============================
-       PRODUCTOS
-  ============================= -->
-  <main id="productos" class="productos">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Nuestros Equipos</h2>
-        <p class="section-sub">Elegí el tuyo y calculá tu cuota al instante</p>
+  <!-- ══════════════════════════════════════════════
+       AUTOCHATBOT — Ventana modal de FAQ automático
+  ══════════════════════════════════════════════ -->
+  <div class="chatbot-overlay" id="chatbotOverlay" aria-hidden="true">
+    <div class="chatbot-modal" role="dialog" aria-label="AutoChatBot TechCell PY">
+
+      <div class="chatbot-header">
+        <div class="chatbot-header__info">
+          <span class="chatbot-avatar">🤖</span>
+          <div>
+            <p class="chatbot-header__name">AutoChatBot TechCell PY</p>
+            <p class="chatbot-header__status">● En línea · Lun–Vie 08:00–18:00 hs</p>
+          </div>
+        </div>
+        <button class="chatbot-close" id="chatbotClose" aria-label="Cerrar chatbot">✕</button>
       </div>
 
-      <div class="grid" id="grilla-productos">
+      <!-- Mensajes del bot -->
+      <div class="chatbot-body" id="chatbotBody">
+        <div class="chatbot-msg chatbot-msg--bot">
+          <span class="chatbot-msg__avatar">🤖</span>
+          <div class="chatbot-msg__bubble">
+            ¡Hola! Soy el <strong>AutoChatBot</strong> de TechCell PY.<br/>
+            Seleccioná un tema y te respondo al instante 👇
+          </div>
+        </div>
+      </div>
 
-        <!-- ─── PRODUCTO 1: Samsung A56 ─── -->
-        <article class="card card--featured" data-precio="5310000" data-id="1">
+      <!-- Menú de temas -->
+      <div class="chatbot-menu" id="chatbotMenu">
+        <p class="chatbot-menu__label">¿Sobre qué querés consultar?</p>
+        <div class="chatbot-menu__grid">
+          <button class="chatbot-opt" data-topic="cobro">💳 Cobro de cuotas</button>
+          <button class="chatbot-opt" data-topic="debito">🏦 Débito automático</button>
+          <button class="chatbot-opt" data-topic="envios">📦 Envíos</button>
+          <button class="chatbot-opt" data-topic="horario-envio">🕐 Horario de envíos</button>
+          <button class="chatbot-opt" data-topic="seguridad">🔒 Seguridad</button>
+          <button class="chatbot-opt" data-topic="horario-atencion">📞 Horario de atención</button>
+          <button class="chatbot-opt chatbot-opt--wa" data-topic="whatsapp">💬 Hablar con un asesor</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       PRODUCTOS
+       Flujo: Home → Marca → Modelos → Cuotero
+  ══════════════════════════════════════════════ -->
+  <section id="productos" class="productos-section">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title">Nuestros Equipos</h2>
+        <p class="section-sub">Seleccioná una marca para ver los modelos disponibles</p>
+      </div>
+
+      <!-- Paso 1: Selección de marca -->
+      <div class="marca-selector">
+        <button class="marca-btn active" data-marca="samsung">
+          <span class="marca-btn__icon">🔵</span>Samsung
+        </button>
+        <button class="marca-btn" data-marca="xiaomi">
+          <span class="marca-btn__icon">🟠</span>Xiaomi
+        </button>
+      </div>
+
+      <!-- Paso 2: Modelos Samsung (visible por defecto) -->
+      <div class="grid" id="grid-samsung">
+
+        <!-- Samsung A56 -->
+        <article class="card" data-precio="5310000" data-modelo="Samsung Galaxy A56">
           <div class="card__badge card__badge--samsung">Samsung</div>
-          <div class="card__featured-tag">⭐ Destacado</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&q=80" alt="Samsung Galaxy A56" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=85" alt="Samsung Galaxy A56" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1649509859670-c4ce1f773c78?w=500&q=85" alt="Samsung Galaxy A56" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=500&q=85" alt="Samsung Galaxy A56" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Samsung Galaxy A56</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Galaxy A56</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 8GB RAM</span>
               <span class="spec-tag">📦 256GB</span>
             </div>
-            <p class="card__desc">Smartphone Samsung Galaxy A56 con 8GB de RAM y 256GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="5310000" data-id="1">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <!-- Paso 3: Cuotero -->
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-1">885.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">5.310.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">442.500 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Samsung%20A56%20en%206%20cuotas." target="_blank" id="wa1-1">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Samsung%20A56%20en%206%20cuotas." target="_blank" id="wa2-1">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 2: Samsung A36 8GB ─── -->
-        <article class="card" data-precio="3906000" data-id="2">
+        <!-- Samsung A36 8GB -->
+        <article class="card" data-precio="3906000" data-modelo="Samsung Galaxy A36 8GB">
           <div class="card__badge card__badge--samsung">Samsung</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1646396341697-07bde68a4eba?w=400&q=80" alt="Samsung Galaxy A36" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1646396341697-07bde68a4eba?w=500&q=85" alt="Samsung Galaxy A36 8GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=85" alt="Samsung Galaxy A36 8GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&q=85" alt="Samsung Galaxy A36 8GB" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Samsung Galaxy A36</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Galaxy A36</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 8GB RAM</span>
               <span class="spec-tag">📦 256GB</span>
             </div>
-            <p class="card__desc">Smartphone Samsung Galaxy A36 con 8GB de RAM y 256GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="3906000" data-id="2">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-2">651.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">3.906.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">325.500 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Samsung%20A36%208GB%20en%206%20cuotas." target="_blank" id="wa1-2">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Samsung%20A36%208GB%20en%206%20cuotas." target="_blank" id="wa2-2">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 3: Samsung A36 6GB ─── -->
-        <article class="card" data-precio="3330000" data-id="3">
+        <!-- Samsung A36 6GB -->
+        <article class="card" data-precio="3330000" data-modelo="Samsung Galaxy A36 6GB">
           <div class="card__badge card__badge--samsung">Samsung</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400&q=80" alt="Samsung Galaxy A36 6GB" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1632633173522-47456de71b76?w=500&q=85" alt="Samsung Galaxy A36 6GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=500&q=85" alt="Samsung Galaxy A36 6GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=85" alt="Samsung Galaxy A36 6GB" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Samsung Galaxy A36</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Galaxy A36</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 6GB RAM</span>
               <span class="spec-tag">📦 128GB</span>
             </div>
-            <p class="card__desc">Smartphone Samsung Galaxy A36 con 6GB de RAM y 128GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="3330000" data-id="3">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-3">555.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">3.330.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">277.500 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Samsung%20A36%206GB%20en%206%20cuotas." target="_blank" id="wa1-3">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Samsung%20A36%206GB%20en%206%20cuotas." target="_blank" id="wa2-3">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 4: Samsung A16 ─── -->
-        <article class="card" data-precio="1800000" data-id="4">
+        <!-- Samsung A16 -->
+        <article class="card" data-precio="1800000" data-modelo="Samsung Galaxy A16">
           <div class="card__badge card__badge--samsung">Samsung</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80" alt="Samsung Galaxy A16" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=85" alt="Samsung Galaxy A16" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=85" alt="Samsung Galaxy A16" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1546054454-aa26e2b734c7?w=500&q=85" alt="Samsung Galaxy A16" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Samsung Galaxy A16</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Galaxy A16</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 4GB RAM</span>
               <span class="spec-tag">📦 128GB</span>
             </div>
-            <p class="card__desc">Smartphone Samsung Galaxy A16 con 4GB de RAM y 128GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="1800000" data-id="4">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-4">300.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">1.800.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">150.000 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Samsung%20A16%20en%206%20cuotas." target="_blank" id="wa1-4">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Samsung%20A16%20en%206%20cuotas." target="_blank" id="wa2-4">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 5: Samsung A17 4GB ─── -->
-        <article class="card" data-precio="2700000" data-id="5">
+        <!-- Samsung A17 4GB -->
+        <article class="card" data-precio="2700000" data-modelo="Samsung Galaxy A17 4GB">
           <div class="card__badge card__badge--samsung">Samsung</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=400&q=80" alt="Samsung Galaxy A17" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&q=85" alt="Samsung Galaxy A17 4GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1649509859670-c4ce1f773c78?w=500&q=85" alt="Samsung Galaxy A17 4GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=85" alt="Samsung Galaxy A17 4GB" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Samsung Galaxy A17</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Galaxy A17</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 4GB RAM</span>
               <span class="spec-tag">📦 128GB</span>
             </div>
-            <p class="card__desc">Smartphone Samsung Galaxy A17 con 4GB de RAM y 128GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="2700000" data-id="5">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-5">450.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">2.700.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">225.000 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Samsung%20A17%204GB%20en%206%20cuotas." target="_blank" id="wa1-5">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Samsung%20A17%204GB%20en%206%20cuotas." target="_blank" id="wa2-5">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 6: Samsung A17 8GB ─── -->
-        <article class="card" data-precio="2880000" data-id="6">
+        <!-- Samsung A17 8GB -->
+        <article class="card" data-precio="2880000" data-modelo="Samsung Galaxy A17 8GB">
           <div class="card__badge card__badge--samsung">Samsung</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1632633173522-47456de71b76?w=400&q=80" alt="Samsung Galaxy A17 8GB" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1649509859670-c4ce1f773c78?w=500&q=85" alt="Samsung Galaxy A17 8GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1646396341697-07bde68a4eba?w=500&q=85" alt="Samsung Galaxy A17 8GB" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&q=85" alt="Samsung Galaxy A17 8GB" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Samsung Galaxy A17</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Galaxy A17</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 8GB RAM</span>
               <span class="spec-tag">📦 256GB</span>
             </div>
-            <p class="card__desc">Smartphone Samsung Galaxy A17 con 8GB de RAM y 256GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="2880000" data-id="6">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-6">480.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">2.880.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">240.000 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Samsung%20A17%208GB%20en%206%20cuotas." target="_blank" id="wa1-6">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Samsung%20A17%208GB%20en%206%20cuotas." target="_blank" id="wa2-6">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 7: Xiaomi Redmi Note 15 Pro ─── -->
-        <article class="card card--featured" data-precio="5130000" data-id="7">
+      </div><!-- /grid-samsung -->
+
+      <!-- Modelos Xiaomi (oculto por defecto) -->
+      <div class="grid hidden" id="grid-xiaomi">
+
+        <!-- Redmi Note 15 Pro -->
+        <article class="card" data-precio="5130000" data-modelo="Xiaomi Redmi Note 15 Pro">
           <div class="card__badge card__badge--xiaomi">Xiaomi</div>
-          <div class="card__featured-tag">🔥 Top Xiaomi</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=400&q=80" alt="Xiaomi Redmi Note 15 Pro" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=500&q=85" alt="Redmi Note 15 Pro" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=85" alt="Redmi Note 15 Pro" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=500&q=85" alt="Redmi Note 15 Pro" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
             <h3 class="card__name">Redmi Note 15 Pro</h3>
-            <div class="card__specs-grid">
+            <div class="card__specs">
               <span class="spec-tag">💾 8GB RAM</span>
               <span class="spec-tag">📦 256GB</span>
             </div>
-            <p class="card__desc">Smartphone Xiaomi Redmi Note 15 Pro con 8GB de RAM y 256GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="5130000" data-id="7">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-7">855.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">5.130.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">427.500 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Redmi%20Note%2015%20Pro%20en%206%20cuotas." target="_blank" id="wa1-7">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Redmi%20Note%2015%20Pro%20en%206%20cuotas." target="_blank" id="wa2-7">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 8: Xiaomi Redmi Note 15 ─── -->
-        <article class="card" data-precio="2970000" data-id="8">
+        <!-- Redmi Note 15 -->
+        <article class="card" data-precio="2970000" data-modelo="Xiaomi Redmi Note 15">
           <div class="card__badge card__badge--xiaomi">Xiaomi</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&q=80" alt="Xiaomi Redmi Note 15" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=85" alt="Redmi Note 15" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=500&q=85" alt="Redmi Note 15" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1649509859670-c4ce1f773c78?w=500&q=85" alt="Redmi Note 15" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
             <h3 class="card__name">Redmi Note 15</h3>
-            <div class="card__specs-grid">
+            <div class="card__specs">
               <span class="spec-tag">💾 6GB RAM</span>
               <span class="spec-tag">📦 128GB</span>
             </div>
-            <p class="card__desc">Smartphone Xiaomi Redmi Note 15 con 6GB de RAM y 128GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="2970000" data-id="8">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-8">495.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">2.970.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">247.500 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Redmi%20Note%2015%20en%206%20cuotas." target="_blank" id="wa1-8">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Redmi%20Note%2015%20en%206%20cuotas." target="_blank" id="wa2-8">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-        <!-- ─── PRODUCTO 9: Xiaomi Redmi 15C ─── -->
-        <article class="card" data-precio="2070000" data-id="9">
+        <!-- Redmi 15C -->
+        <article class="card" data-precio="2070000" data-modelo="Xiaomi Redmi 15C">
           <div class="card__badge card__badge--xiaomi">Xiaomi</div>
-          <div class="card__img-wrap">
-            <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=400&q=80" alt="Xiaomi Redmi 15C" class="card__img" loading="lazy"/>
+          <div class="card__carousel">
+            <div class="carousel__track">
+              <img src="https://images.unsplash.com/photo-1649509859670-c4ce1f773c78?w=500&q=85" alt="Redmi 15C" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=85" alt="Redmi 15C" class="carousel__img" loading="lazy"/>
+              <img src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?w=500&q=85" alt="Redmi 15C" class="carousel__img" loading="lazy"/>
+            </div>
+            <button class="carousel__btn carousel__btn--prev" aria-label="Anterior">‹</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Siguiente">›</button>
+            <div class="carousel__dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
           </div>
           <div class="card__body">
-            <h3 class="card__name">Xiaomi Redmi 15C</h3>
-            <div class="card__specs-grid">
+            <h3 class="card__name">Redmi 15C</h3>
+            <div class="card__specs">
               <span class="spec-tag">💾 8GB RAM</span>
               <span class="spec-tag">📦 256GB</span>
             </div>
-            <p class="card__desc">Smartphone Xiaomi Redmi 15C con 8GB de RAM y 256GB de almacenamiento. Ideal para redes sociales, juegos y uso diario.</p>
-            <div class="cuotero" data-precio="2070000" data-id="9">
-              <label class="cuotero__label">Calculá tu cuota:</label>
+            <div class="cuotero">
+              <p class="cuotero__label">Elegí tus cuotas</p>
               <div class="cuotero__btns">
-                <button class="cuota-btn active" data-cuotas="6">6x</button>
-                <button class="cuota-btn" data-cuotas="12">12x</button>
+                <button class="cuota-btn" data-cuotas="6">6x</button>
+                <button class="cuota-btn active" data-cuotas="12">12x</button>
                 <button class="cuota-btn" data-cuotas="18">18x</button>
                 <button class="cuota-btn" data-cuotas="24">24x</button>
               </div>
               <div class="cuotero__resultado">
-                <div class="cuotero__cuota-wrap">
-                  <span class="cuotero__cuota-label">Cuota mensual</span>
-                  <span class="cuotero__monto" id="monto-9">345.000 Gs</span>
-                </div>
-                <div class="cuotero__total-wrap">
-                  <span class="cuotero__total-label">Precio total</span>
-                  <span class="cuotero__total">2.070.000 Gs</span>
-                </div>
+                <span class="cuotero__num-label">12 cuotas de</span>
+                <span class="cuotero__monto">172.500 Gs</span>
               </div>
             </div>
             <div class="card__wa-btns">
-              <a class="btn btn--whatsapp" href="https://wa.me/595992102202?text=Hola%20Matheo!%20Me%20interesa%20el%20Xiaomi%20Redmi%2015C%20en%206%20cuotas." target="_blank" id="wa1-9">
+              <a class="btn btn--wa card__wa-link" href="#" target="_blank">
                 <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Matheo Martinez
-              </a>
-              <a class="btn btn--whatsapp btn--whatsapp-2" href="https://wa.me/595987101181?text=Hola%20Jesus!%20Me%20interesa%20el%20Xiaomi%20Redmi%2015C%20en%206%20cuotas." target="_blank" id="wa2-9">
-                <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Jesus Santa Cruz
+                Consultar por WhatsApp
               </a>
             </div>
           </div>
         </article>
 
-      </div><!-- /grid -->
-    </div>
-  </main>
-
-  <!-- ============================
-       SECCIÓN CONTACTO
-  ============================= -->
-  <section id="contacto" class="cta-section">
-    <div class="container">
-      <div class="cta-box">
-        <h2 class="cta-box__title">¿Hablamos por WhatsApp?</h2>
-        <p class="cta-box__sub">Nuestros asesores te ayudan a elegir el celular ideal y el plan de cuotas que mejor se adapte a vos.</p>
-        <div class="cta-box__btns">
-          <a href="https://wa.me/595992102202?text=Hola%20Matheo!%20Quiero%20consultar%20por%20celulares." target="_blank" class="btn btn--primary">
-            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Matheo Martinez
-          </a>
-          <a href="https://wa.me/595987101181?text=Hola%20Jesus!%20Quiero%20consultar%20por%20celulares." target="_blank" class="btn btn--whatsapp-solo">
-            <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Jesus Santa Cruz
-          </a>
-        </div>
-      </div>
+      </div><!-- /grid-xiaomi -->
     </div>
   </section>
 
-  <!-- ============================
-       PREGUNTAS FRECUENTES
-  ============================= -->
+  <!-- ══════════════════════════════════════════════
+       FAQ — Preguntas Frecuentes
+  ══════════════════════════════════════════════ -->
   <section id="faq" class="faq-section">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Preguntas Frecuentes</h2>
-        <p class="section-sub">Todo lo que necesitás saber antes de comprar</p>
+        <p class="section-sub">Todo lo que necesitás saber antes de consultar</p>
       </div>
       <div class="faq-list">
 
         <div class="faq-item">
-          <button class="faq-pregunta" aria-expanded="false">
-            ¿Cómo funciona el sistema de cuotas?
-            <span class="faq-icono">+</span>
+          <button class="faq-q" aria-expanded="false">
+            💳 ¿Cómo funciona el sistema de cobro de cuotas?
+            <span class="faq-ico">+</span>
           </button>
-          <div class="faq-respuesta">
-            <p>Podés dividir el precio total del celular en 6, 12, 18 o 24 cuotas mensuales iguales. El precio total nunca cambia, solo se divide entre la cantidad de cuotas que elijas. Usá el calculador en cada producto para ver el monto exacto de tu cuota.</p>
+          <div class="faq-a">
+            <p>El precio total del equipo se divide en cuotas mensuales iguales: 6, 12, 18 o 24 cuotas. Cada mes se cobra el mismo importe fijo. Podés calcular tu cuota exacta directamente en la ficha de cada producto.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-pregunta" aria-expanded="false">
-            ¿Los precios incluyen impuestos?
-            <span class="faq-icono">+</span>
+          <button class="faq-q" aria-expanded="false">
+            🏦 ¿Cómo funciona el débito automático?
+            <span class="faq-ico">+</span>
           </button>
-          <div class="faq-respuesta">
-            <p>Sí, todos los precios mostrados en guaraníes (Gs) son el precio final con impuestos incluidos. No hay costos ocultos ni cargos adicionales.</p>
+          <div class="faq-a">
+            <p>El cobro mensual se realiza mediante débito automático sobre la cuenta registrada al momento de la compra. Esto garantiza que nunca pierdas una cuota y simplifica el proceso de pago sin necesidad de transferencias manuales.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-pregunta" aria-expanded="false">
-            ¿Cómo realizo mi pedido?
-            <span class="faq-icono">+</span>
+          <button class="faq-q" aria-expanded="false">
+            📦 ¿Realizan envíos a domicilio u oficina?
+            <span class="faq-ico">+</span>
           </button>
-          <div class="faq-respuesta">
-            <p>Simplemente hacé clic en el botón "Consultar por WhatsApp" del celular que te interesa. Uno de nuestros asesores (Matheo o Jesús) te va a guiar durante todo el proceso de compra de forma rápida y segura.</p>
+          <div class="faq-a">
+            <p>Sí. Realizamos <strong>envíos seguros</strong> con entrega directa en tu <strong>domicilio u oficina</strong> en todo el territorio de la República del Paraguay. Al confirmar tu consulta indicás la dirección exacta de entrega.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-pregunta" aria-expanded="false">
-            ¿Hacen envíos a todo el país?
-            <span class="faq-icono">+</span>
+          <button class="faq-q" aria-expanded="false">
+            🕐 ¿Cuál es el horario de envíos?
+            <span class="faq-ico">+</span>
           </button>
-          <div class="faq-respuesta">
-            <p>Sí, realizamos envíos a todo Paraguay. Consultá con nuestros asesores por WhatsApp para conocer los tiempos de entrega y costos de envío según tu ciudad o departamento.</p>
+          <div class="faq-a">
+            <p>Los envíos se procesan y despachan de <strong>lunes a viernes</strong> en horario de <strong>08:00 a 18:00 hs</strong>. Los pedidos confirmados dentro de ese horario se despachan el mismo día o al siguiente día hábil.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-pregunta" aria-expanded="false">
-            ¿Los celulares tienen garantía?
-            <span class="faq-icono">+</span>
+          <button class="faq-q" aria-expanded="false">
+            🔒 ¿Qué seguridad tienen los envíos?
+            <span class="faq-ico">+</span>
           </button>
-          <div class="faq-respuesta">
-            <p>Todos nuestros equipos cuentan con garantía oficial del fabricante. Ante cualquier problema, podés contactarnos por WhatsApp y te ayudamos con el proceso de garantía.</p>
+          <div class="faq-a">
+            <p>Todos los envíos son <strong>100% seguros</strong>, con seguimiento de paquete y confirmación de entrega. Los equipos viajan correctamente embalados y asegurados hasta llegar a tus manos.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-pregunta" aria-expanded="false">
-            ¿Qué formas de pago aceptan?
-            <span class="faq-icono">+</span>
+          <button class="faq-q" aria-expanded="false">
+            📞 ¿Cuál es el horario de atención al cliente?
+            <span class="faq-ico">+</span>
           </button>
-          <div class="faq-respuesta">
-            <p>Aceptamos transferencias bancarias, pagos en efectivo y otras modalidades. Consultá con nuestros asesores por WhatsApp para conocer todas las opciones disponibles según tu preferencia.</p>
+          <div class="faq-a">
+            <p>Nuestro equipo de atención está disponible de <strong>lunes a viernes de 08:00 a 18:00 hs</strong> vía WhatsApp. Fuera de ese horario podés dejarnos tu consulta y te respondemos al siguiente día hábil.</p>
           </div>
         </div>
 
@@ -581,38 +649,167 @@
     </div>
   </section>
 
-  <!-- ============================
-       PIE DE PÁGINA
-  ============================= -->
+  <!-- ══════════════════════════════════════════════
+       CTA CONTACTO — WhatsApp
+  ══════════════════════════════════════════════ -->
+  <section id="contacto" class="contacto-section">
+    <div class="container">
+      <div class="contacto-box">
+        <h2 class="contacto-box__title">¿Tenés alguna consulta?</h2>
+        <p class="contacto-box__sub">
+          Contactanos por WhatsApp de <strong>lunes a viernes de 08:00 a 18:00 hs</strong>.
+          Te asesoramos sin compromiso.
+        </p>
+        <a href="#" data-wa="cta" data-msg="Hola! Soy docente y quiero consultar sobre celulares en cuotas." target="_blank" class="btn btn--primary btn--lg wa-secure">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Iniciar conversación en WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER — Sin nombres personales
+  ══════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
+      <div class="footer__top">
+        <div class="nav__logo">
           <span class="nav__logo-icon">📱</span>
           <span class="nav__logo-text">TechCell <em>PY</em></span>
         </div>
-        <p class="footer__copy">
-          © 2025 TechCell PY · Asunción, Paraguay<br/>
-          <small>Precios en guaraníes (Gs). Imágenes ilustrativas.</small>
+        <nav class="footer__legal-nav" aria-label="Políticas legales">
+          <a href="#" class="footer__legal-link">Aviso de Privacidad</a>
+          <span class="footer__sep" aria-hidden="true">·</span>
+          <a href="#" class="footer__legal-link">Política de Seguridad</a>
+          <span class="footer__sep" aria-hidden="true">·</span>
+          <a href="#" class="footer__legal-link">Política de Cookies</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 True Martinez Data · República del Paraguay</p>
+        <p class="footer__disclaimer">
+          Sitio de uso interno. No indexado por motores de búsqueda.
+          Precios en guaraníes (Gs). Imágenes ilustrativas.
         </p>
-        <div class="footer__asesores">
-          <a href="https://wa.me/595992102202" target="_blank" class="footer__asesor">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Matheo Martinez
-          </a>
-          <a href="https://wa.me/595987101181" target="_blank" class="footer__asesor">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Jesus Santa Cruz
-          </a>
-        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
-  <a href="https://wa.me/595992102202?text=Hola!%20Quiero%20consultar%20por%20celulares." target="_blank" class="wa-float" aria-label="WhatsApp" title="Consultanos por WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- Botón volver al inicio -->
+  <a href="#home" class="btn-top" id="btnTop" aria-label="Volver al inicio" title="Volver al inicio">↑</a>
+
+  <!-- WhatsApp flotante -->
+  <a href="#" data-wa="float" data-msg="Hola! Quiero consultar sobre celulares en cuotas." target="_blank" class="wa-float wa-secure" aria-label="Consultar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
   </a>
+
+
+  <!-- ══════════════════════════════════════════════
+       FASE 2 — MODAL PRE-CONSULTA (OBLIGATORIO)
+  ══════════════════════════════════════════════ -->
+  <div class="preconsulta-overlay" id="preconsultaOverlay" aria-hidden="true">
+    <div class="preconsulta-modal" role="dialog" aria-labelledby="preconsultaTitle">
+
+      <!-- PASO 1: Formulario -->
+      <div class="preconsulta-step" id="pasoFormulario">
+        <div class="preconsulta-header">
+          <div class="preconsulta-header__icon">📋</div>
+          <div>
+            <h3 class="preconsulta-title" id="preconsultaTitle">Antes de continuar</h3>
+            <p class="preconsulta-subtitle">Completá tus datos para personalizar la consulta</p>
+          </div>
+          <button class="preconsulta-close" id="preconsultaClose" aria-label="Cerrar">✕</button>
+        </div>
+
+        <div class="preconsulta-body">
+          <!-- Indicador del producto seleccionado -->
+          <div class="preconsulta-producto" id="preconsultaProducto"></div>
+
+          <div class="preconsulta-form" id="preconsultaForm">
+
+            <div class="pf-field">
+              <label class="pf-label" for="pfNombre">
+                👤 Nombre completo <span class="pf-req">*</span>
+              </label>
+              <input
+                class="pf-input" id="pfNombre" type="text"
+                placeholder="Ej: María González"
+                autocomplete="name" maxlength="60"
+              />
+              <span class="pf-error" id="errNombre">Ingresá tu nombre</span>
+            </div>
+
+            <div class="pf-field">
+              <label class="pf-label" for="pfInstitucion">
+                🏫 Institución educativa <span class="pf-req">*</span>
+              </label>
+              <input
+                class="pf-input" id="pfInstitucion" type="text"
+                placeholder="Ej: Escuela Nacional N°42"
+                autocomplete="organization" maxlength="80"
+              />
+              <span class="pf-error" id="errInstitucion">Ingresá tu institución</span>
+            </div>
+
+            <div class="pf-field">
+              <label class="pf-label" for="pfCiudad">
+                📍 Ciudad <span class="pf-req">*</span>
+              </label>
+              <input
+                class="pf-input" id="pfCiudad" type="text"
+                placeholder="Ej: Asunción, Capiatá, Ciudad del Este..."
+                autocomplete="address-level2" maxlength="50"
+              />
+              <span class="pf-error" id="errCiudad">Ingresá tu ciudad</span>
+            </div>
+
+          </div>
+
+          <button class="btn btn--primary pf-btn-continuar" id="pfBtnContinuar" type="button">
+            Continuar →
+          </button>
+
+          <p class="pf-privacidad">
+            🔒 Tus datos solo se usan para personalizar la atención.<br/>
+            No se almacenan ni comparten con terceros.
+          </p>
+        </div>
+      </div>
+
+      <!-- PASO 2: Resumen antes de abrir WA -->
+      <div class="preconsulta-step hidden" id="pasoResumen">
+        <div class="preconsulta-header">
+          <div class="preconsulta-header__icon">✅</div>
+          <div>
+            <h3 class="preconsulta-title">Resumen de tu consulta</h3>
+            <p class="preconsulta-subtitle">Revisá los datos antes de enviar por WhatsApp</p>
+          </div>
+          <button class="preconsulta-close preconsulta-close--resumen" aria-label="Cerrar">✕</button>
+        </div>
+
+        <div class="preconsulta-body">
+          <!-- Preview del mensaje -->
+          <div class="resumen-preview" id="resumenPreview"></div>
+
+          <div class="resumen-actions">
+            <button class="btn btn--outline resumen-btn-back" id="resumenBtnBack" type="button">
+              ← Editar datos
+            </button>
+            <button class="btn btn--primary resumen-btn-wa" id="resumenBtnWa" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Enviar por WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
